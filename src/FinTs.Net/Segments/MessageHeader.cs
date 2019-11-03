@@ -7,13 +7,13 @@
         {
         }
 
-        public MessageHeader(int number = 1, int size = 0, string dialogId = "0",  int hbciVer = 300)
+        public MessageHeader(int msgNum, int segNum, int size = 0, string dialogId = "0",  int hbciVer = 300)
         {
-            Header = new SegmentHeader("HNHBK", 3);
+            Header = new SegmentHeader("HNHBK", 3, segNum);
             Size = new DigitElement(12, size);
             HbciVersion = new NumericElement(hbciVer);
             DialogId = new AlphanumericElement(dialogId);
-            MessageNumber = new NumericElement(number);
+            MessageNumber = new NumericElement(msgNum);
             Reference = null;
         }
 

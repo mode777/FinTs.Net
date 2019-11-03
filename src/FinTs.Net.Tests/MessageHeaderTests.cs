@@ -10,7 +10,7 @@ namespace FinTsNet.Tests
         [Fact]
         public void Test1()
         {
-            var header1 = new MessageHeader(1);
+            var header1 = new MessageHeader(1, 0);
             var serialized1 = header1.Serialize();
 
             var header2 = FinTsParser.Parse<MessageHeader>(serialized1);
@@ -20,23 +20,17 @@ namespace FinTsNet.Tests
         }
     }
 
-    public class CancellationResponseTests
+    public class SignatureHeaderTests
     {
         [Fact]
         public void Test1()
         {
-            var response1 = new CancellationResponse
-            {
-                Header = new MessageHeader(1),
-                Feedback = ResponseFeedbackTests.CreateExample(),
-                Footer = new MessageFooter(1)
-            };
-            var serialized1 = response1.Serialize();
+            var header = new SignatureHead(2, "1234", "0", DateTime.Now, 76550000, "760794644");
+            var ser = header.Serialize();
 
-            var response2 = FinTsParser.Parse<CancellationResponse>(serialized1);
-            var serialized2 = response2.Serialize();
+            var header2 = FinTsParser.Parse<SignatureHead>(ser);
 
-            Assert.Equal(serialized1, serialized2);
+            Assert.Equal(ser, header2.Serialize());
         }
     }
 }

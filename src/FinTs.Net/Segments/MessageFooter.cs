@@ -6,9 +6,9 @@
         {
         }
 
-        public MessageFooter(int number)
+        public MessageFooter(int number, int segmentNum)
         {
-            Header = new SegmentHeader("HNHBS", 1);
+            Header = new SegmentHeader("HNHBS", 1, segmentNum);
             MessageNumber = new NumericElement(number);
         }
         

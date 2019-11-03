@@ -6,7 +6,7 @@
         {
         }
 
-        public SegmentHeader(string id, int version, int number = 1, int? reference = null)
+        public SegmentHeader(string id, int version, int number, int? reference = null)
         {
             Id = new AlphanumericElement(id);
             SegmentNumber = new NumericElement(number);

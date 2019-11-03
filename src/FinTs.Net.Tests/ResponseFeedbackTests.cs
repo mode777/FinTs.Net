@@ -9,7 +9,7 @@ namespace FinTsNet.Tests
         {
             return new ResponseFeedback
             {
-                Header = new SegmentHeader("HIRMG", 2),
+                Header = new SegmentHeader("HIRMG", 2, 0),
                 Feedback = new List<Feedback>
                 {
                     new Feedback
