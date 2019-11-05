@@ -2,6 +2,22 @@
 
 namespace FinTsNet
 {
+    public class EncryptionHeader : Segment
+    {
+        public SegmentHeader Header { get; set; }
+        public SecurityProfile Profile { get; set; }
+        public NumericElement SecurityFunction { get; set; }
+        public NumericElement SecurityRole { get; set; }
+        public SecurityIdentification SecurityId { get; set; }
+        public SecurityDateTime SecurityDate { get; set; }
+        public EncryptionAlgorithm Encryption { get; set; }
+
+    }
+
+    public class EncryptionAlgorithm : ElementGroup
+    {
+    }
+
     public class SignatureHead : Segment
     {
         public SignatureHead()

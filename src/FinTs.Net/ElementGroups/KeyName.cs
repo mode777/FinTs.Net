@@ -8,7 +8,8 @@
 
         public KeyName(int blz, string userId, string keyType)
         {
-            BankId = new BankId(blz);
+            CountryCode = new NumericElement(290);
+            BankId = new NumericElement(blz);
             UserId = new AlphanumericElement(userId);
             Type = new AlphanumericElement(keyType);
             Number = new NumericElement(0);
@@ -16,14 +17,17 @@
         }
 
         [FinTsElement(0)]
-        public BankId BankId { get; set; }
+        public NumericElement CountryCode { get; set; }
         [FinTsElement(1)]
-        public AlphanumericElement UserId { get; set; }
+        public NumericElement BankId { get; set; }
+
         [FinTsElement(2)]
-        public AlphanumericElement Type { get; set; }
+        public AlphanumericElement UserId { get; set; }
         [FinTsElement(3)]
-        public NumericElement Number { get; set; }
+        public AlphanumericElement Type { get; set; }
         [FinTsElement(4)]
+        public NumericElement Number { get; set; }
+        [FinTsElement(5)]
         public NumericElement Version { get; set; }
     }
 }
