@@ -8,7 +8,7 @@
 
         public KeyName(int blz, string userId, string keyType)
         {
-            CountryCode = new NumericElement(290);
+            CountryCode = new NumericElement(280);
             BankId = new NumericElement(blz);
             UserId = new AlphanumericElement(userId);
             Type = new AlphanumericElement(keyType);

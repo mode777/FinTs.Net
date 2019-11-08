@@ -3,17 +3,16 @@ using Xunit;
 
 namespace FinTsNet.Tests
 {
-
-    public class SignatureHeaderTests
+    public class EncryptionHeaderTests
     {
 
         [Fact]
         public void Test1()
         {
-            var header = new SignatureHeader(2, "1234", "0", DateTime.Now, 76550000, "760794644");
+            var header = new EncryptionHeader(DateTime.Now, 76550000, "760794644", "0");
             var ser = header.Serialize();
 
-            var header2 = FinTsParser.Parse<SignatureHeader>(ser);
+            var header2 = FinTsParser.Parse<EncryptionHeader>(ser);
 
             Assert.Equal(ser, header2.Serialize());
         }
