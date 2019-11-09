@@ -4,7 +4,7 @@ namespace FinTsNet
 {
     public class Message : CompoundElement, IFinTsElement
     {
-        public void Parse(string str)
+        public virtual void Parse(string str)
         {
             var input = FinTsParser.UnescapeInput(str);
             
@@ -13,7 +13,7 @@ namespace FinTsNet
             Parse(body.Split('\''));
         }              
 
-        public string Serialize()
+        public virtual string Serialize()
         {
             var elements = GetChildren();
 

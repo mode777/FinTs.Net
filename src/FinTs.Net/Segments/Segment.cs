@@ -5,12 +5,12 @@ namespace FinTsNet
 
     public abstract class Segment : CompoundElement, IFinTsElement
     {
-        public void Parse(string str)
+        public virtual  void Parse(string str)
         {
             Parse(str.Split('+'));
         }
         
-        public string Serialize()
+        public virtual string Serialize()
         {
             var elements = GetChildren();
 
