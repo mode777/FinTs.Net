@@ -3,12 +3,12 @@
 namespace FinTsNet.Tests
 {
 
-    public class IdentificationTests
+    public class HksynTests
     {
         [Fact]
         public void Test1()
         {
-            var id = new Hkidn(3, 76550000, "760794644");
+            var id = new Hksyn(0, Hksyn.Query.SystemId);
             TestHelpers.TestSerialization(id);
         }
     }

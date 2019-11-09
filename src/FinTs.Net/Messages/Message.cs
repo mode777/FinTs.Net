@@ -21,5 +21,10 @@ namespace FinTsNet
 
             return body + "'";
         }
+
+        public virtual int Count()
+        {
+            return GetChildren().Count();
+        }
     }
 }

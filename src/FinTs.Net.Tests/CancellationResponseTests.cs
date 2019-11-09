@@ -9,9 +9,9 @@ namespace FinTsNet.Tests
         {
             var response1 = new CancellationResponse
             {
-                Header = new MessageHeader(1, 0),
+                Header = new Hnhbk(1, 0),
                 Feedback = ResponseFeedbackTests.CreateExample(),
-                Footer = new MessageFooter(1, 0)
+                Footer = new Hnhbs(1, 0)
             };
             var serialized1 = response1.Serialize();
 

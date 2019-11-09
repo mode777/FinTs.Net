@@ -2,13 +2,13 @@
 
 namespace FinTsNet
 {
-    public class SignatureHeader : Segment
+    public class Hnshk : Segment
     {
-        public SignatureHeader()
+        public Hnshk()
         {
         }
 
-        public SignatureHeader(int segNum, string controlRef, string systemId, DateTime date, int blz, string userId)
+        public Hnshk(int segNum, string controlRef, string systemId, DateTime date, int blz, string userId)
         {
             Header = new SegmentHeader("HNSHK", 4, segNum);
             SecurityProfile = new SecurityProfile(1, "PIN");

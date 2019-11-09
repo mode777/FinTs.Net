@@ -2,13 +2,12 @@
 
 namespace FinTsNet.Tests
 {
-
-    public class IdentificationTests
+    public class HnshaTests
     {
         [Fact]
         public void Test1()
         {
-            var id = new Hkidn(3, 76550000, "760794644");
+            var id = new Hnsha(0, "abc", "def");
             TestHelpers.TestSerialization(id);
         }
     }

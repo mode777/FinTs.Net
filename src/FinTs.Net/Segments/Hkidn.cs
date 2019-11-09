@@ -1,12 +1,13 @@
 ﻿namespace FinTsNet
 {
-    public class Identification : Segment
+
+    public class Hkidn : Segment
     {
-        public Identification()
+        public Hkidn()
         {
         }
 
-        public Identification(int number, int blz, string userId, string systemId = "0")
+        public Hkidn(int number, int blz, string userId, string systemId = "0")
         {
             Header = new SegmentHeader("HKIDN", 2, number);
             BankId = new BankId(blz);

@@ -1,12 +1,12 @@
 ﻿namespace FinTsNet
 {
-    public class MessageFooter : Segment
+    public class Hnhbs : Segment
     {
-        public MessageFooter()
+        public Hnhbs()
         {
         }
 
-        public MessageFooter(int number, int segmentNum)
+        public Hnhbs(int number, int segmentNum)
         {
             Header = new SegmentHeader("HNHBS", 1, segmentNum);
             MessageNumber = new NumericElement(number);

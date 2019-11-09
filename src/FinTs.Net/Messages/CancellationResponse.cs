@@ -3,10 +3,10 @@
     public class CancellationResponse : Message
     {
         [FinTsElement(0)]
-        public MessageHeader Header { get; set; }
+        public Hnhbk Header { get; set; }
         [FinTsElement(1)]
         public ResponseFeedback Feedback { get; set; }
         [FinTsElement(2)]
-        public MessageFooter Footer { get; set; }
+        public Hnhbs Footer { get; set; }
     }
 }

@@ -2,13 +2,13 @@
 
 namespace FinTsNet
 {
-    public class EncryptionHeader : Segment
+    public class Hnvsk : Segment
     {
-        public EncryptionHeader()
+        public Hnvsk()
         {
         }
 
-        public EncryptionHeader(DateTime date, int blz, string userId, string systemId)
+        public Hnvsk(DateTime date, int blz, string userId, string systemId)
         {
             Header = new SegmentHeader("HNVSK", 3, 998);
             Profile = new SecurityProfile(1, "PIN");

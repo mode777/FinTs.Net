@@ -1,13 +1,13 @@
 ﻿namespace FinTsNet
 {
 
-    public class MessageHeader : Segment
+    public class Hnhbk : Segment
     {
-        public MessageHeader()
+        public Hnhbk()
         {
         }
 
-        public MessageHeader(int msgNum, int segNum, int size = 0, string dialogId = "0",  int hbciVer = 300)
+        public Hnhbk(int msgNum, int segNum, int size = 0, string dialogId = "0",  int hbciVer = 300)
         {
             Header = new SegmentHeader("HNHBK", 3, segNum);
             Size = new DigitElement(12, size);
