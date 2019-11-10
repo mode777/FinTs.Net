@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinTsNet.Messages;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
@@ -17,7 +18,7 @@ namespace FinTsNet.Tests
             var msg = fac.Sync(Hksyn.Query.SystemId);
 
             var ser = msg.Serialize();
-
+            
             var client = new HttpClient();
 
             var encoding = Encoding.GetEncoding("ISO-8859-1");
@@ -48,7 +49,7 @@ namespace FinTsNet.Tests
             {
                 Blz = 76550000,
                 UserId = "760794644",
-                Pin = "xxxx"
+                Pin = "XXXX"
             };
 
             return new TransactionFactory(connData, sessionData, userData);

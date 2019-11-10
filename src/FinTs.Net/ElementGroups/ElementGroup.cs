@@ -11,7 +11,8 @@ namespace FinTsNet
         
         public string Serialize()
         {
-            var elements = GetChildren();
+            var elements = GetChildren().Reverse().SkipWhile(x => x == null).Reverse();
+
             return string.Join(":", elements.Select(x => x?.Serialize() ?? ""));
         }
     }

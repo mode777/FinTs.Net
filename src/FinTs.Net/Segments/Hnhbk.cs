@@ -7,7 +7,7 @@
         {
         }
 
-        public Hnhbk(int msgNum, int segNum, int size = 0, string dialogId = "0",  int hbciVer = 300)
+        public Hnhbk(int msgNum, int segNum = 1, int size = 0, string dialogId = "0",  int hbciVer = 300)
         {
             Header = new SegmentHeader("HNHBK", 3, segNum);
             Size = new DigitElement(12, size);

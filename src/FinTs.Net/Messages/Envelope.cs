@@ -16,7 +16,7 @@ namespace FinTsNet.Messages
         public Envelope(T message, DateTime date, int blz, string userId, string systemId)
         {
         
-            Header = new Hnhbk(1, 0);
+            Header = new Hnhbk(1, 1);
             EncryptionHeader = new Hnvsk(date, blz, userId, systemId);
             Data = message;
             Footer = new Hnhbs(1, message.Count() + 2);

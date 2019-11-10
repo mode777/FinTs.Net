@@ -15,7 +15,7 @@ namespace FinTsNet
 
         public virtual string Serialize()
         {
-            var elements = GetChildren();
+            var elements = GetChildren().Reverse().SkipWhile(x => x == null).Reverse();
 
             var body = string.Join("'", elements.Select(x => x?.Serialize() ?? ""));
 
