@@ -17,7 +17,7 @@ namespace FinTsNet.Tests
         public void Serialize_ShouldCalculateCorrectLength()
         {
             var date = DateTime.Now;
-            var msg = new SynchronizationMessage("0", date, 76550000, "760794644");
+            var msg = new SynchronizationMessage("0", date, 76550000, "760794644", "abc", "0.1", Hksyn.Query.SystemId, "1234");
             var env = new Envelope<SynchronizationMessage>(msg, date, 76550000, "760794644", "0");
 
             var ser = env.Serialize();

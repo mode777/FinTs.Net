@@ -1,37 +1,14 @@
 ﻿namespace FinTsNet
 {
-    public class Hnsha : Segment
+
+
+    public class Hkvvb : Segment
     {
-        public Hnsha()
+        public Hkvvb()
         {
         }
 
-        public Hnsha(int segNum, string controlRef, string signature)
-        {
-            Header = new SegmentHeader("HNSHA", 2, segNum);
-            ControlReference = new AlphanumericElement(controlRef);
-            Result = null;
-            Signature = new AlphanumericElement(signature);
-        }
-
-        [FinTsElement(0)]
-        public SegmentHeader Header { get; set; }
-        [FinTsElement(1)]
-        public AlphanumericElement ControlReference { get; set; }
-        [FinTsElement(2)]
-        public BinaryElement Result { get; set; }
-        [FinTsElement(3)]
-        public AlphanumericElement Signature { get; set; }
-    }
-
-
-    public class Hnvvb : Segment
-    {
-        public Hnvvb()
-        {
-        }
-
-        public Hnvvb(int segNum, string productId, string productVersion)
+        public Hkvvb(int segNum, string productId, string productVersion)
         {
             Header = new SegmentHeader("HKVVB", 3, segNum);
             Bpd = new NumericElement(0);

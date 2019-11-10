@@ -16,7 +16,7 @@ namespace FinTsNet.Messages
         public Envelope(T message, DateTime date, int blz, string userId, string systemId)
         {
         
-            Header = new Hnhbk(0, 1);
+            Header = new Hnhbk(1, 0);
             EncryptionHeader = new Hnvsk(date, blz, userId, systemId);
             Data = message;
             Footer = new Hnhbs(1, message.Count() + 2);
@@ -44,7 +44,7 @@ namespace FinTsNet.Messages
         {
             var encryption = EncryptionHeader.Serialize();
             var content = Data.Serialize();
-            var hnvsd = $"HNVSD:999:1+@{content.Length}@{content}'";
+            var hnvsd = $"HNVSD:999:1+@{content.Length}@{content}";
             var footer = Footer.Serialize();
 
             var list = new[] { Header.Serialize(), encryption, hnvsd, footer };
